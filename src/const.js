@@ -1,4 +1,4 @@
-export const API_MEDIA_URL = "http://localhost:8000";
+export const API_MEDIA_URL = "https://ilserver.herokuapp.com";
 export const ROUTES = {
   home: "/",
   calendar: "/calendar",
@@ -43,7 +43,7 @@ export const CONTENTS = [
     title: "Нарушения и наказания за них",
   },
 ];
-export const BASE_URL = "http://localhost:8000/api/v1/";
+export const BASE_URL = "https://ilserver.herokuapp.com/api/v1/";
 export const BASE_TEAMS_URL = BASE_URL + "teams/";
 export const BASE_PILOTS_URL = BASE_URL + "pilots/";
 export const BASE_RACES_URL = BASE_URL + "races/";
