@@ -12,7 +12,7 @@
         <v-card-title class="il-team-card__title">{{ team.name }}</v-card-title>
         <v-card-text class="il-team-card__content">
           <v-img
-            :src="$options.API_MEDIA_URL + team.image"
+            :src="$options.getTeamImage(team.image)"
             class="il-team-card__image"
           ></v-img>
           <div class="il-team-card__text-content">
@@ -41,11 +41,13 @@
 </template>
 
 <script>
-import { API_MEDIA_URL } from "@/const";
+// import { API_MEDIA_URL } from "@/const";
 import { mapActions, mapState } from "vuex";
+import { getTeamImage } from "@/helpers";
 export default {
   name: "TeamsCards",
-  API_MEDIA_URL,
+  getTeamImage,
+  // API_MEDIA_URL,
   computed: {
     ...mapState("teams", {
       teams: "teams",

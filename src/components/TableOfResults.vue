@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { API_MEDIA_URL } from "@/const";
 import { mapActions, mapState } from "vuex";
 import TableHead from "@/components/TableHead";
 import TableBody from "@/components/TableBody";
@@ -19,7 +18,6 @@ import SwitchTableButtons from "@/components/SwitchTableButtons";
 export default {
   name: "TableOfResults",
   components: { SwitchTableButtons, TableBody, TableHead },
-  API_MEDIA_URL,
   computed: {
     ...mapState("race", {
       race: "race",

@@ -16,7 +16,7 @@
         >
           <v-img
             class="il-table-image"
-            :src="$options.API_MEDIA_URL + r.country_flag"
+            :src="$options.getFlagImage(r.country_flag)"
           ></v-img>
         </router-link>
       </th>
@@ -25,11 +25,13 @@
 </template>
 
 <script>
-import { API_MEDIA_URL } from "@/const";
+// import { API_MEDIA_URL } from "@/const";
 import { mapState } from "vuex";
+import { getFlagImage } from "@/helpers";
 export default {
   name: "TableHead",
-  API_MEDIA_URL,
+  getFlagImage,
+  // API_MEDIA_URL,
   props: {
     race: {
       type: Array,

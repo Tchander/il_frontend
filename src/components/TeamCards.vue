@@ -13,7 +13,7 @@
       <v-card-text class="il-pilot-card__content">
         <v-img
           class="il-pilot-card__image"
-          :src="$options.API_MEDIA_URL + pilot.image"
+          :src="$options.getPilotImage(pilot.image)"
         ></v-img>
         <div class="il-pilot-card__info">
           Лига: <span>{{ pilot.league }}</span>
@@ -48,12 +48,14 @@
 </template>
 
 <script>
-import { API_MEDIA_URL } from "@/const";
+// import { API_MEDIA_URL } from "@/const";
 import { mapActions, mapState } from "vuex";
+import { getPilotImage } from "@/helpers";
 
 export default {
   name: "TeamCards",
-  API_MEDIA_URL,
+  // API_MEDIA_URL,
+  getPilotImage,
   props: {
     teamName: {
       type: String,
