@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="il-loader" v-if="loading">
+      <v-progress-circular indeterminate></v-progress-circular>
+    </div>
     <v-card class="il-team-card" v-for="(team, index) in teams" :key="index">
       <router-link
         class="il-team-link"
@@ -48,6 +51,11 @@ export default {
   name: "TeamsCards",
   getTeamImage,
   // API_MEDIA_URL,
+  data() {
+    return {
+      loading: true,
+    };
+  },
   computed: {
     ...mapState("teams", {
       teams: "teams",
@@ -58,6 +66,7 @@ export default {
   },
   async mounted() {
     await this.getAllTeams();
+    this.loading = false;
   },
 };
 </script>

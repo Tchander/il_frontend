@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="il-loader" v-if="loading">
+      <v-progress-circular indeterminate></v-progress-circular>
+    </div>
     <switch-table-buttons />
     <v-simple-table class="il-table">
       <template v-slot:default>
@@ -18,6 +21,11 @@ import SwitchTableButtons from "@/components/SwitchTableButtons";
 export default {
   name: "TableOfResults",
   components: { SwitchTableButtons, TableBody, TableHead },
+  data() {
+    return {
+      loading: true,
+    };
+  },
   computed: {
     ...mapState("race", {
       race: "race",
@@ -33,6 +41,7 @@ export default {
   async mounted() {
     await this.getAllRace();
     await this.getAllPilots();
+    this.loading = false;
   },
 };
 </script>

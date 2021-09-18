@@ -3,6 +3,9 @@
     <header-banner />
     <div class="il-container">
       <navigation :color="'lightGrey'" />
+      <div class="il-loader" v-if="loading">
+        <v-progress-circular indeterminate></v-progress-circular>
+      </div>
       <v-simple-table class="il-table" v-if="currentRace">
         <template v-slot:default>
           <thead>
@@ -104,6 +107,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      loading: true,
+    };
+  },
   computed: {
     ...mapState("race", {
       currentRace: "currentRace",
@@ -130,6 +138,7 @@ export default {
   },
   async mounted() {
     await this.getRaceByCountry(this.country);
+    this.loading = false;
   },
 };
 </script>

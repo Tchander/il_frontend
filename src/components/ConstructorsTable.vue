@@ -1,34 +1,39 @@
 <template>
-  <div class="il-constructors-tables">
-    <div>
-      <h1 class="il-constructors-league-title">Лига 1</h1>
-      <v-simple-table
-        class="il-table il-constructor-table"
-        v-if="teamsFilteredByLeague1.length"
-      >
-        <template v-slot:default>
-          <constructors-table-head />
-          <constructors-table-body
-            :teams="teamsFilteredByLeague1"
-            :league="$options.LEAGUES.FIRST"
-          />
-        </template>
-      </v-simple-table>
+  <div>
+    <div class="il-loader" v-if="loading">
+      <v-progress-circular indeterminate></v-progress-circular>
     </div>
-    <div>
-      <h1 class="il-constructors-league-title">Лига 2</h1>
-      <v-simple-table
-        class="il-table il-constructor-table"
-        v-if="teamsFilteredByLeague2.length"
-      >
-        <template v-slot:default>
-          <constructors-table-head />
-          <constructors-table-body
-            :teams="teamsFilteredByLeague2"
-            :league="$options.LEAGUES.SECOND"
-          />
-        </template>
-      </v-simple-table>
+    <div class="il-constructors-tables">
+      <div>
+        <h1 class="il-constructors-league-title">Лига 1</h1>
+        <v-simple-table
+          class="il-table il-constructor-table"
+          v-if="teamsFilteredByLeague1.length"
+        >
+          <template v-slot:default>
+            <constructors-table-head />
+            <constructors-table-body
+              :teams="teamsFilteredByLeague1"
+              :league="$options.LEAGUES.FIRST"
+            />
+          </template>
+        </v-simple-table>
+      </div>
+      <div>
+        <h1 class="il-constructors-league-title">Лига 2</h1>
+        <v-simple-table
+          class="il-table il-constructor-table"
+          v-if="teamsFilteredByLeague2.length"
+        >
+          <template v-slot:default>
+            <constructors-table-head />
+            <constructors-table-body
+              :teams="teamsFilteredByLeague2"
+              :league="$options.LEAGUES.SECOND"
+            />
+          </template>
+        </v-simple-table>
+      </div>
     </div>
   </div>
 </template>
@@ -41,6 +46,11 @@ import { LEAGUES } from "@/const";
 export default {
   name: "ConstructorsTable",
   LEAGUES,
+  data() {
+    return {
+      loading: true,
+    };
+  },
   components: {
     ConstructorsTableBody,
     ConstructorsTableHead,
@@ -53,6 +63,7 @@ export default {
   },
   async created() {
     await this.getAllTeams();
+    this.loading = false;
   },
 };
 </script>

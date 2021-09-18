@@ -1,49 +1,55 @@
 <template>
-  <div class="il-pilot-cards" v-if="team">
-    <v-card
-      class="il-pilot-card"
-      v-for="(pilot, index) in team.pilots"
-      :key="index"
-    >
-      <v-card-title>
-        <div class="il-pilot-card__title">
-          {{ pilot.name }}
-        </div>
-      </v-card-title>
-      <v-card-text class="il-pilot-card__content">
-        <v-img
-          class="il-pilot-card__image"
-          :src="$options.getPilotImage(pilot.image)"
-        ></v-img>
-        <div class="il-pilot-card__info">
-          Лига: <span>{{ pilot.league }}</span>
-        </div>
-        <div v-if="pilot.total_score % 1 !== 0" class="il-pilot-card__info">
-          Очков в личном зачёте: <span>{{ pilot.total_score }}</span>
-        </div>
-        <div v-else class="il-pilot-card__info">
-          Очков в личном зачёте: <span>{{ parseInt(pilot.total_score) }}</span>
-        </div>
-        <div class="il-pilot-card__info">
-          Лучший результат в гонке: <span>{{ pilot.best_race_finish }}</span>
-        </div>
-        <div class="il-pilot-card__info">
-          Лучший результат в квалификации:
-          <span>{{ pilot.highest_grid_position }}</span>
-        </div>
-        <div class="il-pilot-card__info">
-          Побед в гонке над напарником:
-          <span>{{ pilot.race_victories_over_teammate }}</span>
-        </div>
-        <div class="il-pilot-card__info">
-          Побед в квалификации над напарником:
-          <span>{{ pilot.qualifying_victories_over_teammate }}</span>
-        </div>
-        <div class="il-pilot-card__info">
-          Количество сходов: <span>{{ pilot.do_not_finish }}</span>
-        </div>
-      </v-card-text>
-    </v-card>
+  <div>
+    <div class="il-loader" v-if="loading">
+      <v-progress-circular indeterminate></v-progress-circular>
+    </div>
+    <div class="il-pilot-cards" v-if="team">
+      <v-card
+        class="il-pilot-card"
+        v-for="(pilot, index) in team.pilots"
+        :key="index"
+      >
+        <v-card-title>
+          <div class="il-pilot-card__title">
+            {{ pilot.name }}
+          </div>
+        </v-card-title>
+        <v-card-text class="il-pilot-card__content">
+          <v-img
+            class="il-pilot-card__image"
+            :src="$options.getPilotImage(pilot.image)"
+          ></v-img>
+          <div class="il-pilot-card__info">
+            Лига: <span>{{ pilot.league }}</span>
+          </div>
+          <div v-if="pilot.total_score % 1 !== 0" class="il-pilot-card__info">
+            Очков в личном зачёте: <span>{{ pilot.total_score }}</span>
+          </div>
+          <div v-else class="il-pilot-card__info">
+            Очков в личном зачёте:
+            <span>{{ parseInt(pilot.total_score) }}</span>
+          </div>
+          <div class="il-pilot-card__info">
+            Лучший результат в гонке: <span>{{ pilot.best_race_finish }}</span>
+          </div>
+          <div class="il-pilot-card__info">
+            Лучший результат в квалификации:
+            <span>{{ pilot.highest_grid_position }}</span>
+          </div>
+          <div class="il-pilot-card__info">
+            Побед в гонке над напарником:
+            <span>{{ pilot.race_victories_over_teammate }}</span>
+          </div>
+          <div class="il-pilot-card__info">
+            Побед в квалификации над напарником:
+            <span>{{ pilot.qualifying_victories_over_teammate }}</span>
+          </div>
+          <div class="il-pilot-card__info">
+            Количество сходов: <span>{{ pilot.do_not_finish }}</span>
+          </div>
+        </v-card-text>
+      </v-card>
+    </div>
   </div>
 </template>
 
@@ -62,6 +68,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      loading: true,
+    };
+  },
   computed: {
     ...mapState("teams", {
       team: "currentTeam",
@@ -72,6 +83,7 @@ export default {
   },
   async mounted() {
     await this.getTeamByUrlName(this.teamName);
+    this.loading = false;
   },
 };
 </script>

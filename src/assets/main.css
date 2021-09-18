@@ -1,6 +1,7 @@
 .il-container {
   width: 100%;
   max-width: 1200px;
+  min-height: 600px;
   margin: 0 auto;
 }
 .il-table.il-table.il-table {
@@ -29,4 +30,7 @@
 }
 .bronze.bronze.bronze.bronze {
   color: #cb5d28;
+}
+.il-loader {
+  margin-bottom: 1000px;
 }
