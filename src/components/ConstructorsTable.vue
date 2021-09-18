@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="il-loader" v-if="loading">
+    <div v-if="loading">
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
-    <div class="il-constructors-tables">
+    <div class="il-constructors-tables" v-if="loading === false">
       <div>
         <h1 class="il-constructors-league-title">Лига 1</h1>
         <v-simple-table

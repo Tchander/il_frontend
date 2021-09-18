@@ -3,10 +3,10 @@
     <header-banner />
     <div class="il-container">
       <navigation :color="'lightGrey'" />
-      <div class="il-loader" v-if="loading">
+      <div v-if="loading">
         <v-progress-circular indeterminate></v-progress-circular>
       </div>
-      <v-simple-table class="il-table" v-if="currentRace">
+      <v-simple-table class="il-table" v-if="currentRace && loading === false">
         <template v-slot:default>
           <thead>
             <tr class="il-table-head">

@@ -1,45 +1,49 @@
 <template>
   <div>
-    <div class="il-loader" v-if="loading">
+    <div v-if="loading">
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
-    <v-card class="il-team-card" v-for="(team, index) in teams" :key="index">
-      <router-link
-        class="il-team-link"
-        :to="{
-          name: 'Team',
-          path: '/team' + team.url_name,
-          params: { teamName: team.url_name },
-        }"
-      >
-        <v-card-title class="il-team-card__title">{{ team.name }}</v-card-title>
-        <v-card-text class="il-team-card__content">
-          <v-img
-            :src="$options.getTeamImage(team.image)"
-            class="il-team-card__image"
-          ></v-img>
-          <div class="il-team-card__text-content">
-            <div v-for="(pilot, i) in team.pilots" :key="i">
-              <h3
-                v-if="pilot.league === 1 && i === 0"
-                class="il-team-card__text-content__league"
-              >
-                Лига 1
-              </h3>
-              <h3
-                v-if="pilot.league === 2 && i === 2"
-                class="il-team-card__text-content__league"
-              >
-                Лига 2
-              </h3>
-              <h4 class="il-team-card__text-content__pilot">
-                {{ i + 1 }}. {{ pilot.name }}
-              </h4>
+    <div v-if="loading === false">
+      <v-card class="il-team-card" v-for="(team, index) in teams" :key="index">
+        <router-link
+          class="il-team-link"
+          :to="{
+            name: 'Team',
+            path: '/team' + team.url_name,
+            params: { teamName: team.url_name },
+          }"
+        >
+          <v-card-title class="il-team-card__title">{{
+            team.name
+          }}</v-card-title>
+          <v-card-text class="il-team-card__content">
+            <v-img
+              :src="$options.getTeamImage(team.image)"
+              class="il-team-card__image"
+            ></v-img>
+            <div class="il-team-card__text-content">
+              <div v-for="(pilot, i) in team.pilots" :key="i">
+                <h3
+                  v-if="pilot.league === 1 && i === 0"
+                  class="il-team-card__text-content__league"
+                >
+                  Лига 1
+                </h3>
+                <h3
+                  v-if="pilot.league === 2 && i === 2"
+                  class="il-team-card__text-content__league"
+                >
+                  Лига 2
+                </h3>
+                <h4 class="il-team-card__text-content__pilot">
+                  {{ i + 1 }}. {{ pilot.name }}
+                </h4>
+              </div>
             </div>
-          </div>
-        </v-card-text>
-      </router-link>
-    </v-card>
+          </v-card-text>
+        </router-link>
+      </v-card>
+    </div>
   </div>
 </template>
 

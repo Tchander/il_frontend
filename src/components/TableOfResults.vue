@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="il-loader" v-if="loading">
+    <div v-if="loading">
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
-    <switch-table-buttons />
-    <v-simple-table class="il-table">
+    <switch-table-buttons v-if="loading === false" />
+    <v-simple-table class="il-table" v-if="loading === false">
       <template v-slot:default>
         <table-head :race="race" />
         <table-body :race-length="race.length" :pilots="pilots" />

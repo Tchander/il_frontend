@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="il-loader" v-if="loading">
+    <div v-if="loading">
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
-    <div class="il-pilot-cards" v-if="team">
+    <div class="il-pilot-cards" v-if="team && loading === false">
       <v-card
         class="il-pilot-card"
         v-for="(pilot, index) in team.pilots"
