@@ -1,10 +1,6 @@
 <template>
-  <header class="il__header">
-    <img
-      class="il__img__banner"
-      src="../assets/img/il_banner.png"
-      alt="banner"
-    />
+  <header class="il-header">
+    <img class="il-img-banner" src="../assets/img/il_banner.png" alt="banner" />
   </header>
 </template>
 
@@ -15,10 +11,10 @@ export default {
 </script>
 
 <style scoped>
-.il__header {
+.il-header {
   margin-bottom: 30px;
 }
-.il__img__banner {
+.il-img-banner {
   width: 100%;
 }
 </style>
