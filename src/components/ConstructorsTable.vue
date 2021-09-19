@@ -4,7 +4,7 @@
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
     <div class="il-constructors-tables" v-if="loading === false">
-      <div>
+      <div class="il-constructors-table">
         <h1 class="il-constructors-league-title">Лига 1</h1>
         <v-simple-table
           class="il-table il-constructor-table"
@@ -19,7 +19,7 @@
           </template>
         </v-simple-table>
       </div>
-      <div>
+      <div class="il-constructors-table">
         <h1 class="il-constructors-league-title">Лига 2</h1>
         <v-simple-table
           class="il-table il-constructor-table"
@@ -91,6 +91,21 @@ export default {
   }
   .il-constructor-table.il-constructor-table.il-constructor-table {
     width: 475px;
+  }
+}
+@media (max-width: 959px) {
+  .il-constructors-tables {
+    flex-wrap: wrap;
+  }
+  .il-constructors-tables {
+    flex-wrap: wrap;
+  }
+  .il-constructors-league-title {
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  .il-constructors-table {
+    margin-bottom: 10px;
   }
 }
 </style>

@@ -1,42 +1,123 @@
 <template>
-  <nav
-    class="il-navigation"
-    :class="{
-      'light-grey': color === 'lightGrey',
-    }"
-  >
-    <router-link class="il-logo-link" to="/">
-      <img class="il-logo-img" src="../assets/img/il_logo.jpg" alt="logo" />
-      <div class="il-logo-home">Главная</div>
-    </router-link>
-    <div class="il-navigation-links">
-      <a
-        href="https://vk.com/topic-185193200_48038169"
-        class="il-navigation-link"
-        target="_blank"
-      >
-        Регистрация
-      </a>
-      <router-link class="il-navigation-link" to="/regulations"
-        >Регламент</router-link
-      >
-      <router-link class="il-navigation-link" to="/calendar"
-        >Календарь</router-link
-      >
-      <router-link
-        class="il-navigation-link"
-        :to="{
-          name: 'TournamentTable',
-          query: { league: $options.LEAGUES.FIRST },
-        }"
-        >Турнирная таблица</router-link
-      >
-      <router-link class="il-navigation-link" to="/constructorsCup"
-        >Кубок конструкторов</router-link
-      >
-      <router-link class="il-navigation-link" to="/teams">Команды</router-link>
+  <div>
+    <div class="text-center il-menu">
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            class="il-menu-btn"
+            :class="{
+              'light-grey': color === 'lightGrey',
+            }"
+            dark
+            v-bind="attrs"
+            v-on="on"
+          >
+            Навигация
+          </v-btn>
+        </template>
+        <v-list style="background-color: #1a202c">
+          <v-list-item>
+            <v-list-item-title>
+              <router-link class="il-navigation-link" to="/">
+                Главная
+              </router-link>
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title
+              ><a
+                href="https://vk.com/topic-185193200_48038169"
+                class="il-navigation-link"
+                target="_blank"
+              >
+                Регистрация
+              </a></v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
+              <router-link class="il-navigation-link" to="/regulations"
+                >Регламент</router-link
+              >
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title
+              ><router-link class="il-navigation-link" to="/calendar"
+                >Календарь</router-link
+              >
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
+              <router-link
+                :to="{
+                  name: 'TournamentTable',
+                  query: { league: $options.LEAGUES.FIRST },
+                }"
+                class="il-navigation-link"
+                >Турнирная таблица</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
+              <router-link class="il-navigation-link" to="/constructorsCup"
+                >Кубок конструкторов</router-link
+              ></v-list-item-title
+            >
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
+              <router-link class="il-navigation-link" to="/teams"
+                >Команды</router-link
+              >
+            </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </div>
-  </nav>
+    <nav
+      class="il-navigation"
+      :class="{
+        'light-grey': color === 'lightGrey',
+      }"
+    >
+      <router-link class="il-logo-link" to="/">
+        <img class="il-logo-img" src="../assets/img/il_logo.jpg" alt="logo" />
+        <div class="il-logo-home">Главная</div>
+      </router-link>
+      <div class="il-navigation-links">
+        <a
+          href="https://vk.com/topic-185193200_48038169"
+          class="il-navigation-link"
+          target="_blank"
+        >
+          Регистрация
+        </a>
+        <router-link class="il-navigation-link" to="/regulations"
+          >Регламент</router-link
+        >
+        <router-link class="il-navigation-link" to="/calendar"
+          >Календарь</router-link
+        >
+        <router-link
+          class="il-navigation-link"
+          :to="{
+            name: 'TournamentTable',
+            query: { league: $options.LEAGUES.FIRST },
+          }"
+          >Турнирная таблица</router-link
+        >
+        <router-link class="il-navigation-link" to="/constructorsCup"
+          >Кубок конструкторов</router-link
+        >
+        <router-link class="il-navigation-link" to="/teams"
+          >Команды</router-link
+        >
+      </div>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -98,6 +179,9 @@ export default {
 .il-navigation-link:hover {
   color: #fdc9c9;
 }
+.il-menu.il-menu.il-menu.il-menu {
+  display: none;
+}
 
 @media (max-width: 1263px) {
   .il-navigation {
@@ -111,11 +195,25 @@ export default {
 
 @media (max-width: 959px) {
   .il-navigation {
-    padding: 0 5px;
+    display: none;
   }
   .il-logo-img {
     width: 40px;
     height: 40px;
+  }
+  .il-menu.il-menu.il-menu.il-menu {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .il-menu-btn.il-menu-btn.il-menu-btn.il-menu-btn {
+    width: 200px;
+    background-color: #0f3368;
+  }
+  .il-menu-btn.light-grey.il-menu-btn.light-grey.il-menu-btn.light-grey.il-menu-btn.light-grey {
+    background-color: #242c41;
+  }
+  .il-navigation-link {
+    margin: 0;
   }
 }
 </style>

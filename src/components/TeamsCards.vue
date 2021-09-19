@@ -93,27 +93,22 @@ export default {
   font-size: 26px;
   font-weight: 700;
 }
-
 .il-team-card__content {
   display: flex;
 }
-
 .il-team-card__image {
   max-width: 750px;
 }
-
 .il-team-card__text-content {
   width: 100%;
   text-align: left;
   padding: 15px 0 0 40px;
 }
-
 .il-team-card__text-content__league {
   color: #fff;
   margin: 60px 0 20px 0;
   font-size: 20px;
 }
-
 .il-team-card__text-content__pilot {
   color: #fff;
   font-size: 18px;
@@ -126,6 +121,26 @@ export default {
 @media (max-width: 1263px) {
   .il-team-card.il-team-card.il-team-card {
     max-width: 940px;
+  }
+}
+@media (max-width: 959px) {
+  .il-team-card.il-team-card.il-team-card {
+    max-width: 590px;
+  }
+  .il-team-card__image {
+    max-width: 400px;
+    max-height: 231px;
+  }
+  .il-team-card__text-content {
+    padding: 0 0 0 20px;
+  }
+  .il-team-card__text-content__league {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  .il-team-card__text-content__pilot {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 }
 </style>

@@ -94,4 +94,17 @@ export default {
   width: 40px;
   height: 40px;
 }
+@media (max-width: 959px) {
+  .il-footer-social > li {
+    width: 30px;
+    height: 30px;
+  }
+  .il-footer-link__img {
+    width: 30px;
+    height: 30px;
+  }
+  .il-footer-card__text.il-footer-card__text.il-footer-card__text {
+    padding: 10px 0;
+  }
+}
 </style>

@@ -141,4 +141,23 @@ export default {
     width: 49%;
   }
 }
+@media (max-width: 959px) {
+  .il-pilot-card__title {
+    font-size: 22px;
+  }
+  .il-pilot-card__image.il-pilot-card__image.il-pilot-card__image {
+    width: 142px;
+    height: 164px;
+  }
+  .il-pilot-card__info {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .il-pilot-card__info > span {
+    font-size: 16px;
+  }
+  .il-pilot-card.il-pilot-card.il-pilot-card {
+    margin-bottom: 20px;
+  }
+}
 </style>

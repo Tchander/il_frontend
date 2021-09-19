@@ -40,6 +40,16 @@
 
 @media (max-width: 959px) {
   .il-container {
-    min-height: 488px;
+    min-height: 412px;
+  }
+  .il-table-head.il-table-head.il-table-head.il-table-head > th {
+    padding: 0 5px;
+  }
+  .il-table-col.il-table-col.il-table-col.il-table-col {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+  .il-table.il-table.il-table {
+    margin: 0 5px 20px 5px;
   }
 }

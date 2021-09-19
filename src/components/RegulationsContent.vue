@@ -1243,4 +1243,10 @@ export default {
     padding: 0 8px;
   }
 }
+@media (max-width: 959px) {
+  .il-regulations-content__table > tr > td {
+    padding: 4px;
+    font-size: 14px;
+  }
+}
 </style>

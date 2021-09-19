@@ -77,4 +77,11 @@ export default {
 .il-league__btn:hover.il-league__btn:hover.il-league__btn:hover {
   background-color: #304f9c;
 }
+@media (max-width: 959px) {
+  .il-league__btn.il-league__btn.il-league__btn {
+    max-width: 150px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
 </style>
