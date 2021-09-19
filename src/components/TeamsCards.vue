@@ -22,7 +22,11 @@
               class="il-team-card__image"
             ></v-img>
             <div class="il-team-card__text-content">
-              <div v-for="(pilot, i) in team.pilots" :key="i">
+              <div
+                class="il-team-card__text-pilots"
+                v-for="(pilot, i) in team.pilots"
+                :key="i"
+              >
                 <h3
                   v-if="pilot.league === 1 && i === 0"
                   class="il-team-card__text-content__league"
@@ -141,6 +145,42 @@ export default {
   .il-team-card__text-content__pilot {
     font-size: 16px;
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 599px) {
+  .il-team-card.il-team-card.il-team-card {
+    max-width: 310px;
+  }
+  .il-team-card__title {
+    font-size: 22px;
+  }
+  .il-team-card__image {
+    max-width: 290px;
+    max-height: 167px;
+    margin-bottom: 10px;
+  }
+  .il-team-card__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .il-team-card__text-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .il-team-card__text-pilots {
+    display: flex;
+    margin-bottom: 5px;
+  }
+  .il-team-card__text-content__league {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  .il-team-card__text-content__pilot {
+    font-size: 14px;
+    margin: 0 0 0 10px;
+    padding: 0;
   }
 }
 </style>

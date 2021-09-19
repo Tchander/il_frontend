@@ -160,4 +160,9 @@ export default {
     margin-bottom: 20px;
   }
 }
+@media (max-width: 599px) {
+  .il-pilot-card.il-pilot-card.il-pilot-card {
+    width: 100%;
+  }
+}
 </style>

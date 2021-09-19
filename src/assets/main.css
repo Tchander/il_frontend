@@ -31,13 +31,11 @@
 .bronze.bronze.bronze.bronze {
   color: #cb5d28;
 }
-
 @media (max-width: 1263px) {
   .il-container {
     max-width: 1263px;
   }
 }
-
 @media (max-width: 959px) {
   .il-container {
     min-height: 412px;
@@ -51,5 +49,21 @@
   }
   .il-table.il-table.il-table {
     margin: 0 5px 20px 5px;
+  }
+}
+@media (max-width: 599px) {
+  .il-container {
+    min-height: 261px;
+  }
+  .il-table-head.il-table-head.il-table-head.il-table-head > th {
+    padding: 0 4px;
+  }
+  .il-table-col.il-table-col.il-table-col.il-table-col {
+    padding: 0 4px;
+    font-size: 12px;
+  }
+  .il-table-image.il-table-image.il-table-image.il-table-image {
+    width: 36px;
+    height: 23px;
   }
 }

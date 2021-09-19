@@ -182,7 +182,6 @@ export default {
 .il-menu.il-menu.il-menu.il-menu {
   display: none;
 }
-
 @media (max-width: 1263px) {
   .il-navigation {
     border-radius: 0;
@@ -192,7 +191,6 @@ export default {
     margin-left: 16px;
   }
 }
-
 @media (max-width: 959px) {
   .il-navigation {
     display: none;
@@ -214,6 +212,11 @@ export default {
   }
   .il-navigation-link {
     margin: 0;
+  }
+}
+@media (max-width: 599px) {
+  .il-menu-btn.il-menu-btn.il-menu-btn.il-menu-btn {
+    width: 160px;
   }
 }
 </style>

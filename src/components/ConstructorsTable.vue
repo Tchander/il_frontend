@@ -84,7 +84,6 @@ export default {
   font-size: 32px;
   border-radius: 4px;
 }
-
 @media (max-width: 1263px) {
   .il-constructors-tables {
     justify-content: space-evenly;
@@ -97,15 +96,22 @@ export default {
   .il-constructors-tables {
     flex-wrap: wrap;
   }
-  .il-constructors-tables {
-    flex-wrap: wrap;
-  }
   .il-constructors-league-title {
     margin-bottom: 10px;
     font-size: 26px;
   }
   .il-constructors-table {
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 599px) {
+  .il-constructor-table.il-constructor-table.il-constructor-table {
+    width: 300px;
+  }
+  .il-constructors-league-title {
+    margin-bottom: 10px;
+    padding: 6px 0;
+    font-size: 22px;
   }
 }
 </style>

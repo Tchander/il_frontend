@@ -107,4 +107,17 @@ export default {
     padding: 10px 0;
   }
 }
+@media (max-width: 599px) {
+  .il-footer-social > li {
+    width: 26px;
+    height: 26px;
+  }
+  .il-footer-link__img {
+    width: 26px;
+    height: 26px;
+  }
+  .il-footer-card__text.il-footer-card__text.il-footer-card__text {
+    padding: 8px 0;
+  }
+}
 </style>

@@ -1249,4 +1249,28 @@ export default {
     font-size: 14px;
   }
 }
+@media (max-width: 599px) {
+  .il-regulations {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .il-regulations-content > ol > li {
+    margin-bottom: 25px;
+  }
+  .il-regulations-contents__list > li {
+    margin-bottom: 10px;
+  }
+  .il-regulations-content__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .il-regulations-content__subsection {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  .il-regulations-content__table > tr > td {
+    padding: 0;
+    font-size: 10px;
+  }
+}
 </style>
