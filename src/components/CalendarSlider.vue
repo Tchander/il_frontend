@@ -33,4 +33,9 @@ export default {
   margin-bottom: 30px;
   min-height: 899px;
 }
+@media (max-width: 1263px) {
+  .slider_block {
+    min-height: 720px;
+  }
+}
 </style>

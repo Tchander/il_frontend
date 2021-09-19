@@ -1237,4 +1237,10 @@ export default {
   padding: 10px 20px;
   border: solid 1px #ffffff;
 }
+@media (max-width: 1263px) {
+  .il-regulations-contents,
+  .il-regulations-content {
+    padding: 0 8px;
+  }
+}
 </style>

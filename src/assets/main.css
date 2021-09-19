@@ -31,3 +31,15 @@
 .bronze.bronze.bronze.bronze {
   color: #cb5d28;
 }
+
+@media (max-width: 1263px) {
+  .il-container {
+    max-width: 1263px;
+  }
+}
+
+@media (max-width: 959px) {
+  .il-container {
+    min-height: 488px;
+  }
+}

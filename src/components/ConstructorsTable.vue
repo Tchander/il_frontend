@@ -84,4 +84,13 @@ export default {
   font-size: 32px;
   border-radius: 4px;
 }
+
+@media (max-width: 1263px) {
+  .il-constructors-tables {
+    justify-content: space-evenly;
+  }
+  .il-constructor-table.il-constructor-table.il-constructor-table {
+    width: 475px;
+  }
+}
 </style>

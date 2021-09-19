@@ -95,7 +95,6 @@ export default {
   flex-wrap: wrap;
   width: 100%;
 }
-
 .il-pilot-card.il-pilot-card.il-pilot-card {
   margin-bottom: 40px;
   border-radius: 20px;
@@ -133,5 +132,13 @@ export default {
   color: rgb(23, 123, 222);
   font-weight: 700;
   font-size: 20px;
+}
+@media (max-width: 1263px) {
+  .il-pilot-cards {
+    padding: 0 20px;
+  }
+  .il-pilot-card.il-pilot-card.il-pilot-card {
+    width: 49%;
+  }
 }
 </style>

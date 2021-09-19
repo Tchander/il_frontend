@@ -98,4 +98,24 @@ export default {
 .il-navigation-link:hover {
   color: #fdc9c9;
 }
+
+@media (max-width: 1263px) {
+  .il-navigation {
+    border-radius: 0;
+  }
+  .il-navigation-link {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 959px) {
+  .il-navigation {
+    padding: 0 5px;
+  }
+  .il-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+}
 </style>

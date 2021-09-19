@@ -123,4 +123,9 @@ export default {
 .il-team-link {
   text-decoration: none;
 }
+@media (max-width: 1263px) {
+  .il-team-card.il-team-card.il-team-card {
+    max-width: 940px;
+  }
+}
 </style>
