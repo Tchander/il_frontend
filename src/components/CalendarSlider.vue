@@ -48,4 +48,9 @@ export default {
     min-height: 240px;
   }
 }
+@media (max-width: 319px) {
+  .slider_block {
+    min-height: 210px;
+  }
+}
 </style>

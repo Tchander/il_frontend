@@ -15,7 +15,7 @@
             Навигация
           </v-btn>
         </template>
-        <v-list style="background-color: #1a202c">
+        <v-list class="il-menu-list" style="background-color: #1a202c">
           <v-list-item>
             <v-list-item-title>
               <router-link class="il-navigation-link" to="/">
@@ -217,6 +217,18 @@ export default {
 @media (max-width: 599px) {
   .il-menu-btn.il-menu-btn.il-menu-btn.il-menu-btn {
     width: 160px;
+  }
+  .il-menu-list.il-menu-list.il-menu-list.il-menu-list {
+    padding: 0;
+  }
+  .il-navigation-link {
+    font-size: 12px;
+  }
+}
+@media (max-width: 319px) {
+  .il-menu-btn.il-menu-btn.il-menu-btn.il-menu-btn {
+    width: 140px;
+    font-size: 12px;
   }
 }
 </style>

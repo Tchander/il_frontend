@@ -22,4 +22,14 @@ export default {
     margin-bottom: 20px;
   }
 }
+@media (max-width: 599px) {
+  .il-header {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 319px) {
+  .il-header {
+    margin-bottom: 10px;
+  }
+}
 </style>

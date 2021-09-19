@@ -120,4 +120,17 @@ export default {
     padding: 8px 0;
   }
 }
+@media (max-width: 319px) {
+  .il-footer-social > li {
+    width: 20px;
+    height: 20px;
+  }
+  .il-footer-link__img {
+    width: 20px;
+    height: 20px;
+  }
+  .il-footer-card__text.il-footer-card__text.il-footer-card__text {
+    padding: 4px 0;
+  }
+}
 </style>

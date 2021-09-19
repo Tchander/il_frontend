@@ -114,4 +114,17 @@ export default {
     font-size: 22px;
   }
 }
+@media (max-width: 319px) {
+  .il-constructors-table {
+    margin-bottom: 0;
+  }
+  .il-constructor-table.il-constructor-table.il-constructor-table {
+    width: 270px;
+  }
+  .il-constructors-league-title {
+    margin-bottom: 8px;
+    padding: 6px 0;
+    font-size: 18px;
+  }
+}
 </style>

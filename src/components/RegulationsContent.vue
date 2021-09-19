@@ -1273,4 +1273,16 @@ export default {
     font-size: 10px;
   }
 }
+@media (max-width: 319px) {
+  .il-regulations-contents,
+  .il-regulations-content {
+    padding: 0 2px;
+  }
+  .il-regulations-content__table > tr > td {
+    font-size: 8px;
+  }
+  .il-regulations-content__title {
+    font-size: 16px;
+}
+}
 </style>

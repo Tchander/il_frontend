@@ -33,4 +33,10 @@ export default {
     height: 163px;
   }
 }
+@media (max-width: 319px) {
+  .il-video {
+    width: 240px;
+    height: 130px;
+  }
+}
 </style>

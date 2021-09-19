@@ -183,4 +183,17 @@ export default {
     padding: 0;
   }
 }
+@media (max-width: 319px) {
+  .il-team-card.il-team-card.il-team-card {
+    max-width: 270px;
+    margin-bottom: 10px;
+  }
+  .il-team-card__text-content__league {
+    font-size: 14px;
+  }
+  .il-team-card__text-content__pilot {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}
 </style>

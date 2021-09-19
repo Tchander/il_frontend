@@ -91,4 +91,11 @@ export default {
     font-size: 16px;
   }
 }
+@media (max-width: 319px) {
+  .il-league__btn.il-league__btn.il-league__btn {
+    max-width: 100px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
 </style>

@@ -67,3 +67,8 @@
     height: 23px;
   }
 }
+@media (max-width: 319px) {
+  .il-container {
+    min-height: 228px;
+  }
+}
