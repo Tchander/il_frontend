@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="il-wrapper">
     <header-banner />
     <div class="il-container">
       <navigation :color="'lightGrey'" />

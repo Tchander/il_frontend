@@ -185,7 +185,7 @@ export default {
 }
 @media (max-width: 319px) {
   .il-team-card.il-team-card.il-team-card {
-    max-width: 270px;
+    width: 98vw;
     margin-bottom: 10px;
   }
   .il-team-card__text-content__league {

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="il-wrapper">
     <header-banner />
     <div class="il-container">
       <navigation />
@@ -20,9 +20,3 @@ export default {
   components: { HomeVideo, FooterInfo, HeaderBanner, Navigation },
 };
 </script>
-
-<style scoped>
-.home {
-  font-family: "Lato", sans-serif;
-}
-</style>

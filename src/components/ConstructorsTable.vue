@@ -89,7 +89,7 @@ export default {
     justify-content: space-evenly;
   }
   .il-constructor-table.il-constructor-table.il-constructor-table {
-    width: 475px;
+    width: 48vw;
   }
 }
 @media (max-width: 959px) {
@@ -106,7 +106,7 @@ export default {
 }
 @media (max-width: 599px) {
   .il-constructor-table.il-constructor-table.il-constructor-table {
-    width: 300px;
+    width: 70vw;
   }
   .il-constructors-league-title {
     margin-bottom: 10px;
@@ -119,7 +119,7 @@ export default {
     margin-bottom: 0;
   }
   .il-constructor-table.il-constructor-table.il-constructor-table {
-    width: 270px;
+    width: 70vw;
   }
   .il-constructors-league-title {
     margin-bottom: 8px;

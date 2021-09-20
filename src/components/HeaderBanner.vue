@@ -15,7 +15,7 @@ export default {
   margin-bottom: 30px;
 }
 .il-img-banner {
-  width: 100%;
+  width: 100vw;
 }
 @media (max-width: 959px) {
   .il-header {
