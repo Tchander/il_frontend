@@ -27,6 +27,11 @@ export default {
       leagueForTable: "leagueForTable",
     }),
   },
+  watch: {
+    "$route.query"() {
+      this.changeLeagueNumber();
+    },
+  },
   methods: {
     ...mapActions("leagueForTable", ["switchLeagueNumber"]),
     switchTable(leagueNumber) {

@@ -1283,6 +1283,6 @@ export default {
   }
   .il-regulations-content__title {
     font-size: 16px;
-}
+  }
 }
 </style>
