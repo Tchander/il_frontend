@@ -12,6 +12,12 @@
       class="il-league__btn"
       >Лига 2</v-btn
     >
+    <v-btn
+      @click="switchTable($options.LEAGUES.THIRD)"
+      :class="{ active: leagueForTable === $options.LEAGUES.THIRD }"
+      class="il-league__btn"
+      >Лига 3</v-btn
+    >
   </div>
 </template>
 
