@@ -39,6 +39,12 @@
                 >
                   Лига 2
                 </h3>
+                <h3
+                  v-if="pilot.league === 3 && i === 4"
+                  class="il-team-card__text-content__league"
+                >
+                  Лига 3
+                </h3>
                 <h4 class="il-team-card__text-content__pilot">
                   {{ i + 1 }}. {{ pilot.name }}
                 </h4>
@@ -106,11 +112,11 @@ export default {
 .il-team-card__text-content {
   width: 100%;
   text-align: left;
-  padding: 15px 0 0 40px;
+  padding: 0 0 0 40px;
 }
 .il-team-card__text-content__league {
   color: #fff;
-  margin: 60px 0 20px 0;
+  margin: 30px 0 20px 0;
   font-size: 20px;
 }
 .il-team-card__text-content__pilot {
@@ -126,6 +132,15 @@ export default {
   .il-team-card.il-team-card.il-team-card {
     max-width: 940px;
   }
+  .il-team-card__text-content {
+    padding-left: 20px;
+  }
+  .il-team-card__text-content__league {
+    font-size: 18px;
+  }
+  .il-team-card__text-content__pilot {
+    font-size: 16px;
+  }
 }
 @media (max-width: 959px) {
   .il-team-card.il-team-card.il-team-card {
@@ -139,12 +154,10 @@ export default {
     padding: 0 0 0 20px;
   }
   .il-team-card__text-content__league {
-    margin: 15px 0;
-    font-size: 18px;
+    margin: 0 0 4px 0;
   }
   .il-team-card__text-content__pilot {
-    font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
 }
 @media (max-width: 599px) {
@@ -175,10 +188,10 @@ export default {
   .il-team-card__text-content__league {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
   }
   .il-team-card__text-content__pilot {
-    font-size: 14px;
+    font-size: 12px;
     margin: 0 0 0 10px;
     padding: 0;
   }
