@@ -64,7 +64,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  base: "/f1_international_league/",
+  // base: "/f1_international_league/",
   routes,
   mode: "history",
 });
