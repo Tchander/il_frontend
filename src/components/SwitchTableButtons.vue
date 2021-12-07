@@ -96,10 +96,14 @@ export default {
   }
 }
 @media (max-width: 599px) {
+  .il-league-buttons.il-league-buttons.il-league-buttons {
+    flex-wrap: wrap;
+  }
   .il-league__btn.il-league__btn.il-league__btn {
     max-width: 120px;
     height: 36px;
     font-size: 16px;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 319px) {

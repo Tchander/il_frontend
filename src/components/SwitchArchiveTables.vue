@@ -55,6 +55,7 @@ export default {
   font-size: 20px;
   text-transform: none;
   margin-left: 20px;
+  margin-right: 20px;
   color: #fff;
   background-color: #242c41;
 }
@@ -68,21 +69,25 @@ export default {
   .il-league__btn.il-league__btn.il-league__btn {
     max-width: 150px;
     height: 45px;
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media (max-width: 599px) {
+  .il-league-buttons.il-league-buttons.il-league-buttons {
+    flex-wrap: wrap;
+  }
   .il-league__btn.il-league__btn.il-league__btn {
-    max-width: 120px;
+    max-width: 140px;
     height: 36px;
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 20px;
   }
 }
 @media (max-width: 319px) {
   .il-league__btn.il-league__btn.il-league__btn {
-    max-width: 100px;
+    max-width: 120px;
     height: 30px;
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 </style>

@@ -60,6 +60,7 @@ export default {
 <style scoped>
 .il-footer.il-footer.il-footer {
   background-color: #0f3368;
+  width: 100vw;
 }
 .il-footer.il-footer.il-footer.light-grey {
   background-color: #242c41;
