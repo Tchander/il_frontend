@@ -4,31 +4,61 @@
       <v-progress-circular indeterminate></v-progress-circular>
     </div>
     <div class="il-constructors-tables" v-if="loading === false">
-      <div class="il-constructors-table">
+      <div class="il-constructors-table" v-if="isArchive">
         <h1 class="il-constructors-league-title">Лига 1</h1>
         <v-simple-table
           class="il-table il-constructor-table"
-          v-if="teamsFilteredByLeague1.length"
+          v-if="teams1FilteredByLeague1.length"
         >
           <template v-slot:default>
             <constructors-table-head />
             <constructors-table-body
-              :teams="teamsFilteredByLeague1"
+              :teams="teams1FilteredByLeague1"
               :league="$options.LEAGUES.FIRST"
             />
           </template>
         </v-simple-table>
       </div>
-      <div class="il-constructors-table">
-        <h1 class="il-constructors-league-title">Лига 2</h1>
+      <div class="il-constructors-table" v-else>
+        <h1 class="il-constructors-league-title">Лига 1</h1>
         <v-simple-table
           class="il-table il-constructor-table"
-          v-if="teamsFilteredByLeague2.length"
+          v-if="teams2FilteredByLeague1.length"
         >
           <template v-slot:default>
             <constructors-table-head />
             <constructors-table-body
-              :teams="teamsFilteredByLeague2"
+              :teams="teams2FilteredByLeague1"
+              :league="$options.LEAGUES.FIRST"
+            />
+          </template>
+        </v-simple-table>
+      </div>
+      <div class="il-constructors-table" v-if="isArchive">
+        <h1 class="il-constructors-league-title">Лига 2</h1>
+        <v-simple-table
+          class="il-table il-constructor-table"
+          v-if="teams1FilteredByLeague2.length"
+        >
+          <template v-slot:default>
+            <constructors-table-head />
+            <constructors-table-body
+              :teams="teams1FilteredByLeague2"
+              :league="$options.LEAGUES.SECOND"
+            />
+          </template>
+        </v-simple-table>
+      </div>
+      <div class="il-constructors-table" v-else>
+        <h1 class="il-constructors-league-title">Лига 2</h1>
+        <v-simple-table
+          class="il-table il-constructor-table"
+          v-if="teams2FilteredByLeague2.length"
+        >
+          <template v-slot:default>
+            <constructors-table-head />
+            <constructors-table-body
+              :teams="teams2FilteredByLeague2"
               :league="$options.LEAGUES.SECOND"
             />
           </template>
@@ -39,13 +69,19 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import ConstructorsTableHead from "@/components/ConstructorsTableHead";
 import ConstructorsTableBody from "@/components/ConstructorsTableBody";
 import { LEAGUES } from "@/const";
 export default {
   name: "ConstructorsTable",
   LEAGUES,
+  props: {
+    isArchive: {
+      type: Boolean,
+      required: true,
+    },
+  },
   data() {
     return {
       loading: true,
@@ -56,13 +92,22 @@ export default {
     ConstructorsTableHead,
   },
   computed: {
-    ...mapState("teams", ["teamsFilteredByLeague1", "teamsFilteredByLeague2"]),
+    ...mapGetters("teams", [
+      "teams1FilteredByLeague1",
+      "teams1FilteredByLeague2",
+      "teams2FilteredByLeague1",
+      "teams2FilteredByLeague2",
+    ]),
   },
   methods: {
-    ...mapActions("teams", ["getAllTeams"]),
+    ...mapActions("teams", ["getAllTeams1", "getAllTeams2"]),
   },
   async created() {
-    await this.getAllTeams();
+    if (this.isArchive) {
+      await this.getAllTeams1();
+    } else {
+      await this.getAllTeams2();
+    }
     this.loading = false;
   },
 };

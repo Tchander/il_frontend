@@ -1,12 +1,12 @@
-import { getAllTeams, getTeamByUrlName } from "@/api/teamApi";
+import { getAllTeams1, getAllTeams2, getTeamByUrlName } from "@/api/teamApi";
 
 export default {
   namespaced: true,
   actions: {
-    async getAllTeams({ commit }) {
+    async getAllTeams1({ commit }) {
       try {
-        const { data } = await getAllTeams();
-        commit("updateTeams", data);
+        const { data } = await getAllTeams1();
+        commit("updateTeams1", data);
       } catch (e) {
         console.log(e);
       }
@@ -19,14 +19,31 @@ export default {
         console.log(e);
       }
     },
+    async getAllTeams2({ commit }) {
+      try {
+        const { data } = await getAllTeams2();
+        commit("updateTeams2", data);
+      } catch (e) {
+        console.log(e);
+      }
+    },
   },
   mutations: {
-    updateTeams(state, payload) {
-      state.teams = [...payload];
-      state.teamsFilteredByLeague1 = [...payload].sort(
+    updateTeams1(state, payload) {
+      state.teams1 = [...payload];
+      state.teams1FilteredByLeague1 = [...payload].sort(
         (prev, next) => next.total_score_league1 - prev.total_score_league1
       );
-      state.teamsFilteredByLeague2 = [...payload].sort(
+      state.teams1FilteredByLeague2 = [...payload].sort(
+        (prev, next) => next.total_score_league2 - prev.total_score_league2
+      );
+    },
+    updateTeams2(state, payload) {
+      state.teams2 = [...payload];
+      state.teams2FilteredByLeague1 = [...payload].sort(
+        (prev, next) => next.total_score_league1 - prev.total_score_league1
+      );
+      state.teams2FilteredByLeague2 = [...payload].sort(
         (prev, next) => next.total_score_league2 - prev.total_score_league2
       );
     },
@@ -34,10 +51,22 @@ export default {
       state.currentTeam = payload;
     },
   },
+  getters: {
+    teams1: (state) => state.teams1,
+    teams1FilteredByLeague1: (state) => state.teams1FilteredByLeague1,
+    teams1FilteredByLeague2: (state) => state.teams1FilteredByLeague2,
+    teams2: (state) => state.teams2,
+    teams2FilteredByLeague1: (state) => state.teams2FilteredByLeague1,
+    teams2FilteredByLeague2: (state) => state.teams2FilteredByLeague2,
+    currentTeam: (state) => state.currentTeam,
+  },
   state: {
-    teams: [],
-    teamsFilteredByLeague1: [],
-    teamsFilteredByLeague2: [],
+    teams1: [],
+    teams1FilteredByLeague1: [],
+    teams1FilteredByLeague2: [],
+    teams2: [],
+    teams2FilteredByLeague1: [],
+    teams2FilteredByLeague2: [],
     currentTeam: null,
   },
 };

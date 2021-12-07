@@ -74,6 +74,13 @@
               >
             </v-list-item-title>
           </v-list-item>
+          <v-list-item>
+            <v-list-item-title>
+              <router-link class="il-navigation-link" to="/archive"
+                >Архив</router-link
+              >
+            </v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-menu>
     </div>
@@ -114,6 +121,9 @@
         >
         <router-link class="il-navigation-link" to="/teams"
           >Команды</router-link
+        >
+        <router-link class="il-navigation-link" to="/archive"
+          >Архив</router-link
         >
       </div>
     </nav>
@@ -172,7 +182,7 @@ export default {
 .il-navigation-link {
   text-decoration: none;
   list-style-type: none;
-  margin-left: 35px;
+  margin-left: 20px;
   color: #fff;
   font-weight: 700;
 }
@@ -188,7 +198,7 @@ export default {
   }
   .il-navigation-link {
     font-size: 16px;
-    margin-left: 16px;
+    margin-left: 8px;
   }
 }
 @media (max-width: 959px) {

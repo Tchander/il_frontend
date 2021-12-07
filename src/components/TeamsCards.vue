@@ -53,7 +53,7 @@
 
 <script>
 // import { API_MEDIA_URL } from "@/const";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { getTeamImage } from "@/helpers";
 export default {
   name: "TeamsCards",
@@ -65,15 +65,15 @@ export default {
     };
   },
   computed: {
-    ...mapState("teams", {
-      teams: "teams",
+    ...mapGetters("teams", {
+      teams: "teams2",
     }),
   },
   methods: {
-    ...mapActions("teams", ["getAllTeams"]),
+    ...mapActions("teams", ["getAllTeams2"]),
   },
   async mounted() {
-    await this.getAllTeams();
+    await this.getAllTeams2();
     this.loading = false;
   },
 };

@@ -1,4 +1,5 @@
-// export const API_MEDIA_URL = "https://ilserver.herokuapp.com/";
+// export const API_MEDIA_URL_1 = "https://ilserver.herokuapp.com/";
+// export const API_MEDIA_URL_2 = "https://ilserver2.herokuapp.com/";
 export const ROUTES = {
   home: "/",
   calendar: "/calendar",
@@ -8,6 +9,7 @@ export const ROUTES = {
   race: "/race/:country",
   regulations: "/regulations",
   constructors_cup: "/constructorsCup",
+  archive: "/archive",
 };
 export const CONTENTS = [
   {
@@ -43,10 +45,14 @@ export const CONTENTS = [
     title: "Нарушения и наказания за них",
   },
 ];
-export const BASE_URL = "https://ilserver.herokuapp.com/api/v1/";
-export const BASE_TEAMS_URL = BASE_URL + "teams/";
-export const BASE_PILOTS_URL = BASE_URL + "pilots/";
-export const BASE_RACES_URL = BASE_URL + "races/";
+export const BASE_URL_1 = "https://ilserver.herokuapp.com/api/v1/";
+export const BASE_TEAMS_URL_1 = BASE_URL_1 + "teams/";
+export const BASE_PILOTS_URL_1 = BASE_URL_1 + "pilots/";
+export const BASE_RACES_URL_1 = BASE_URL_1 + "races/";
+export const BASE_URL_2 = "https://ilserver2.herokuapp.com/api/v1/";
+export const BASE_TEAMS_URL_2 = BASE_URL_2 + "teams/";
+export const BASE_PILOTS_URL_2 = BASE_URL_2 + "pilots/";
+export const BASE_RACES_URL_2 = BASE_URL_2 + "races/";
 export const LEAGUES = {
   FIRST: 1,
   SECOND: 2,

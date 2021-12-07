@@ -2,7 +2,7 @@
   <tbody class="il-table-body">
     <tr
       class="il-table-row"
-      v-for="(pilot, index) in filterPilotsByLeague(pilots, leagueForTable)"
+      v-for="(pilot, index) in filterPilotsByLeague(pilots)"
       :key="index"
     >
       <td class="il-table-col" :class="$options.getClassByPosition(index)">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import { POSITIONS } from "@/const";
 import { getClassByPosition } from "@/helpers";
 
@@ -59,15 +59,25 @@ export default {
       type: Array,
       required: true,
     },
+    isArchive: {
+      type: Boolean,
+      required: true,
+    },
+    leagueForArchive: {
+      type: Number,
+    },
   },
   computed: {
-    ...mapState("leagueForTable", {
+    ...mapGetters("leagueForTable", {
       leagueForTable: "leagueForTable",
     }),
   },
   methods: {
-    filterPilotsByLeague(pilots, league) {
-      return pilots.filter((p) => p.league === league);
+    filterPilotsByLeague(pilots) {
+      if (this.isArchive) {
+        return pilots.filter((p) => p.league === this.leagueForArchive);
+      }
+      return pilots.filter((p) => p.league === this.leagueForTable);
     },
     filterPilotResultsByLeague(pilot) {
       return pilot.results.filter((r) => r.league === pilot.league);

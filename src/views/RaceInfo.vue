@@ -92,7 +92,7 @@
 import FooterInfo from "@/components/FooterInfo";
 import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { POSITIONS } from "@/const";
 import { getClassByPosition } from "@/helpers";
 
@@ -106,6 +106,13 @@ export default {
       type: String,
       required: true,
     },
+    isArchive: {
+      type: Boolean,
+      required: true,
+    },
+    leagueForArchive: {
+      type: Number,
+    },
   },
   data() {
     return {
@@ -113,17 +120,20 @@ export default {
     };
   },
   computed: {
-    ...mapState("race", {
+    ...mapGetters("race", {
       currentRace: "currentRace",
     }),
-    ...mapState("leagueForTable", {
+    ...mapGetters("leagueForTable", {
       leagueForTable: "leagueForTable",
     }),
   },
   methods: {
-    ...mapActions("race", ["getRaceByCountry"]),
+    ...mapActions("race", ["getRaceByCountry1", "getRaceByCountry2"]),
     ...mapActions("leagueForTable", ["switchLeagueNumber"]),
     filterResultsByLeague(results) {
+      if (this.isArchive) {
+        return results.filter((res) => res.league === this.leagueForArchive);
+      }
       return results.filter((res) => res.league === this.leagueForTable);
     },
     changeLeagueNumber() {
@@ -137,7 +147,11 @@ export default {
     this.changeLeagueNumber();
   },
   async mounted() {
-    await this.getRaceByCountry(this.country);
+    if (this.isArchive) {
+      await this.getRaceByCountry1(this.country);
+    } else {
+      await this.getRaceByCountry2(this.country);
+    }
     this.loading = false;
   },
 };

@@ -3,7 +3,7 @@
     <header-banner />
     <div class="il-container">
       <navigation :color="'lightGrey'" />
-      <table-of-results />
+      <table-of-results :is-archive="false" />
     </div>
     <footer-info :color="'lightGrey'" />
   </div>
