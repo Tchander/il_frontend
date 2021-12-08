@@ -6,7 +6,7 @@
       <div v-if="loading">
         <v-progress-circular indeterminate></v-progress-circular>
       </div>
-      <div class="il-race-info">
+      <div v-if="currentRace && loading === false" class="il-race-info">
         <div class="il-race-info__name">
           {{ currentRace.name }}
         </div>
@@ -101,7 +101,7 @@
 import FooterInfo from "@/components/FooterInfo";
 import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapState } from "vuex";
 import { POSITIONS } from "@/const";
 import { getClassByPosition, getFlagImage } from "@/helpers";
 
@@ -119,6 +119,7 @@ export default {
     isArchive: {
       type: Boolean,
       required: true,
+      default: () => false,
     },
     leagueForArchive: {
       type: Number,
@@ -133,7 +134,7 @@ export default {
     ...mapGetters("race", {
       currentRace: "currentRace",
     }),
-    ...mapGetters("leagueForTable", {
+    ...mapState("leagueForTable", {
       leagueForTable: "leagueForTable",
     }),
   },
