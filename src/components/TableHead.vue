@@ -30,7 +30,7 @@
               isArchive: isArchive,
               leagueForArchive: leagueForArchive,
             },
-            query: { league: leagueForArchive },
+            // query: { league: leagueForArchive },
           }"
         >
           <v-img

@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 import { POSITIONS } from "@/const";
 import { getClassByPosition } from "@/helpers";
 
@@ -68,7 +68,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters("leagueForTable", {
+    ...mapState("leagueForTable", {
       leagueForTable: "leagueForTable",
     }),
   },

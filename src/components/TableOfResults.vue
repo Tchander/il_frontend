@@ -14,7 +14,6 @@
           :is-archive="isArchive"
         />
         <table-body
-          v-if="isArchive"
           :is-archive="isArchive"
           :league-for-archive="leagueForArchive"
           :race-length="race1.length"
@@ -24,7 +23,6 @@
       <template v-else v-slot:default>
         <table-head :race="race2" :is-archive="isArchive" />
         <table-body
-          v-if="isArchive"
           :is-archive="isArchive"
           :race-length="race2.length"
           :pilots="pilots2"
@@ -46,6 +44,7 @@ export default {
     isArchive: {
       type: Boolean,
       required: true,
+      default: () => false,
     },
     leagueForArchive: {
       type: Number,
