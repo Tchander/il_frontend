@@ -64,6 +64,21 @@
           </template>
         </v-simple-table>
       </div>
+      <div class="il-constructors-table" v-if="!isArchive">
+        <h1 class="il-constructors-league-title">Лига 3</h1>
+        <v-simple-table
+          class="il-table il-constructor-table"
+          v-if="teams2FilteredByLeague2.length"
+        >
+          <template v-slot:default>
+            <constructors-table-head />
+            <constructors-table-body
+              :teams="teams2FilteredByLeague3"
+              :league="$options.LEAGUES.THIRD"
+            />
+          </template>
+        </v-simple-table>
+      </div>
     </div>
   </div>
 </template>
@@ -97,6 +112,7 @@ export default {
       "teams1FilteredByLeague2",
       "teams2FilteredByLeague1",
       "teams2FilteredByLeague2",
+      "teams2FilteredByLeague3",
     ]),
   },
   methods: {
@@ -117,6 +133,7 @@ export default {
 .il-constructors-tables {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .il-constructor-table.il-constructor-table.il-constructor-table {
   width: 580px;

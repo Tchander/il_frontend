@@ -6,6 +6,15 @@
       <div v-if="loading">
         <v-progress-circular indeterminate></v-progress-circular>
       </div>
+      <div class="il-race-info">
+        <div class="il-race-info__name">
+          {{ currentRace.name }}
+        </div>
+        <v-img
+          class="il-race-info__flag"
+          :src="$options.getFlagImage(currentRace.country_flag)"
+        ></v-img>
+      </div>
       <v-simple-table class="il-table" v-if="currentRace && loading === false">
         <template v-slot:default>
           <thead>
@@ -94,12 +103,13 @@ import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
 import { mapActions, mapGetters } from "vuex";
 import { POSITIONS } from "@/const";
-import { getClassByPosition } from "@/helpers";
+import { getClassByPosition, getFlagImage } from "@/helpers";
 
 export default {
   name: "RaceInfo",
   POSITIONS,
   getClassByPosition,
+  getFlagImage,
   components: { FooterInfo, Navigation, HeaderBanner },
   props: {
     country: {
@@ -156,3 +166,23 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.il-race-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #242c41;
+  margin-bottom: 20px;
+  padding: 6px;
+}
+.il-race-info__name {
+  width: 96%;
+  font-weight: 700;
+  font-size: 24px;
+}
+.il-race-info__flag.il-race-info__flag.il-race-info__flag.il-race-info__flag {
+  width: 50px;
+  height: 32px;
+}
+</style>

@@ -26,7 +26,7 @@
           <v-list-item>
             <v-list-item-title
               ><a
-                href="https://vk.com/topic-185193200_48038169"
+                href="https://vk.com/topic-185193200_48436167"
                 class="il-navigation-link"
                 target="_blank"
               >
