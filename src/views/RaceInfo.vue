@@ -6,6 +6,15 @@
       <div v-if="loading">
         <v-progress-circular indeterminate></v-progress-circular>
       </div>
+      <div class="il-race-info">
+        <div class="il-race-info__name">
+          {{ currentRace.name }}
+        </div>
+        <v-img
+          class="il-race-info__flag"
+          :src="$options.getFlagImage(currentRace.country_flag)"
+        ></v-img>
+      </div>
       <v-simple-table class="il-table" v-if="currentRace && loading === false">
         <template v-slot:default>
           <thead>
@@ -92,19 +101,27 @@
 import FooterInfo from "@/components/FooterInfo";
 import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { POSITIONS } from "@/const";
-import { getClassByPosition } from "@/helpers";
+import { getClassByPosition, getFlagImage } from "@/helpers";
 
 export default {
   name: "RaceInfo",
   POSITIONS,
   getClassByPosition,
+  getFlagImage,
   components: { FooterInfo, Navigation, HeaderBanner },
   props: {
     country: {
       type: String,
       required: true,
+    },
+    isArchive: {
+      type: Boolean,
+      required: true,
+    },
+    leagueForArchive: {
+      type: Number,
     },
   },
   data() {
@@ -113,17 +130,20 @@ export default {
     };
   },
   computed: {
-    ...mapState("race", {
+    ...mapGetters("race", {
       currentRace: "currentRace",
     }),
-    ...mapState("leagueForTable", {
+    ...mapGetters("leagueForTable", {
       leagueForTable: "leagueForTable",
     }),
   },
   methods: {
-    ...mapActions("race", ["getRaceByCountry"]),
+    ...mapActions("race", ["getRaceByCountry1", "getRaceByCountry2"]),
     ...mapActions("leagueForTable", ["switchLeagueNumber"]),
     filterResultsByLeague(results) {
+      if (this.isArchive) {
+        return results.filter((res) => res.league === this.leagueForArchive);
+      }
       return results.filter((res) => res.league === this.leagueForTable);
     },
     changeLeagueNumber() {
@@ -137,8 +157,32 @@ export default {
     this.changeLeagueNumber();
   },
   async mounted() {
-    await this.getRaceByCountry(this.country);
+    if (this.isArchive) {
+      await this.getRaceByCountry1(this.country);
+    } else {
+      await this.getRaceByCountry2(this.country);
+    }
     this.loading = false;
   },
 };
 </script>
+
+<style scoped>
+.il-race-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #242c41;
+  margin-bottom: 20px;
+  padding: 6px;
+}
+.il-race-info__name {
+  width: 96%;
+  font-weight: 700;
+  font-size: 24px;
+}
+.il-race-info__flag.il-race-info__flag.il-race-info__flag.il-race-info__flag {
+  width: 50px;
+  height: 32px;
+}
+</style>

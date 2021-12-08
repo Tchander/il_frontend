@@ -44,12 +44,16 @@ export default {
           href: "https://t.me/joinchat/JmWgNEOkS9tfo58lIOBhhw",
         },
         {
+          src: require("@/assets/img/discord.svg"),
+          href: "https://discord.gg/g6ADEgp9tH",
+        },
+        {
           src: require("@/assets/img/youtube.svg"),
           href: "https://youtube.com/channel/UC9F7VXNzjL4y07XXao0D4PQ",
         },
         {
-          src: require("@/assets/img/discord.svg"),
-          href: "https://discord.gg/g6ADEgp9tH",
+          src: require("@/assets/img/twitch.svg"),
+          href: "https://www.twitch.tv/internationalleague",
         },
       ],
     };
@@ -60,6 +64,7 @@ export default {
 <style scoped>
 .il-footer.il-footer.il-footer {
   background-color: #0f3368;
+  width: 100vw;
 }
 .il-footer.il-footer.il-footer.light-grey {
   background-color: #242c41;
@@ -80,6 +85,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 0;
 }
 .il-footer-social > li {
   list-style-type: none;

@@ -36,6 +36,18 @@
           {{ parseInt(team.total_score_league2) }}
         </div>
       </td>
+      <td
+        class="il-table-col"
+        :class="$options.getClassByPosition(index)"
+        v-else-if="league === $options.LEAGUES.THIRD"
+      >
+        <div v-if="team.total_score_league3 % 1 !== 0">
+          {{ team.total_score_league3 }}
+        </div>
+        <div v-else>
+          {{ parseInt(team.total_score_league3) }}
+        </div>
+      </td>
     </tr>
   </tbody>
 </template>

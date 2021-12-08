@@ -9,6 +9,7 @@ import RaceInfo from "@/views/RaceInfo";
 import Regulations from "@/views/Regulations";
 import ConstructorsCup from "@/views/ConstructorsCup";
 import { ROUTES } from "@/const";
+import ArchiveTables from "@/views/ArchiveTables";
 
 Vue.use(VueRouter);
 
@@ -55,10 +56,15 @@ const routes = [
     name: "Regulations",
     component: Regulations,
   },
+  {
+    path: ROUTES.archive,
+    name: "ArchiveTables",
+    component: ArchiveTables,
+  },
 ];
 
 const router = new VueRouter({
-  base: "/f1_international_league/",
+  // base: "/f1_international_league/",
   routes,
   mode: "history",
 });

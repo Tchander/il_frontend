@@ -16,6 +16,9 @@ export default {
       state.leagueForTable = payload;
     },
   },
+  mapGetters: {
+    leagueForTable: (state) => state.leagueForTable,
+  },
   state: {
     leagueForTable: LEAGUES.FIRST,
   },

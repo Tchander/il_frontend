@@ -1,13 +1,18 @@
 <template>
   <div class="slider_block">
-    <v-carousel height="auto" cycle hide-delimiters :show-arrows="false">
-      <v-carousel-item
-        class="slider-image"
-        v-for="(item, i) in items"
-        :key="i"
-        :src="item.src"
-      ></v-carousel-item>
-    </v-carousel>
+    <!--    <v-carousel height="auto" cycle hide-delimiters :show-arrows="false">-->
+    <!--      <v-carousel-item-->
+    <!--        class="slider-image"-->
+    <!--        v-for="(item, i) in items"-->
+    <!--        :key="i"-->
+    <!--        :src="item.src"-->
+    <!--      ></v-carousel-item>-->
+    <!--    </v-carousel>-->
+    <img
+      class="slider-image"
+      src="../assets/img/calendarIL.jpg"
+      alt="calendar"
+    />
   </div>
 </template>
 
@@ -40,7 +45,8 @@ export default {
   }
   .slider-image.slider-image.slider-image.slider-image {
     width: 950px;
-    height: 713px;
+    height: 848px;
+    /*height: 713px;*/
     margin: 0 auto;
   }
 }
@@ -50,7 +56,8 @@ export default {
   }
   .slider-image.slider-image.slider-image.slider-image {
     width: 590px;
-    height: 443px;
+    height: 527px;
+    /*height: 443px;*/
   }
 }
 @media (max-width: 599px) {
@@ -59,7 +66,8 @@ export default {
   }
   .slider-image.slider-image.slider-image.slider-image {
     width: 310px;
-    height: 233px;
+    height: 277px;
+    /*height: 233px;*/
   }
 }
 @media (max-width: 319px) {
@@ -68,7 +76,8 @@ export default {
   }
   .slider-image.slider-image.slider-image.slider-image {
     width: 270px;
-    height: 203px;
+    height: 241px;
+    /*height: 203px;*/
   }
 }
 </style>

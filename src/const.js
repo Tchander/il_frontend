@@ -1,4 +1,5 @@
-// export const API_MEDIA_URL = "https://ilserver.herokuapp.com/";
+// export const API_MEDIA_URL_1 = "https://ilserver.herokuapp.com/";
+// export const API_MEDIA_URL_2 = "https://ilserver2.herokuapp.com/";
 export const ROUTES = {
   home: "/",
   calendar: "/calendar",
@@ -8,6 +9,7 @@ export const ROUTES = {
   race: "/race/:country",
   regulations: "/regulations",
   constructors_cup: "/constructorsCup",
+  archive: "/archive",
 };
 export const CONTENTS = [
   {
@@ -43,13 +45,18 @@ export const CONTENTS = [
     title: "Нарушения и наказания за них",
   },
 ];
-export const BASE_URL = "https://ilserver.herokuapp.com/api/v1/";
-export const BASE_TEAMS_URL = BASE_URL + "teams/";
-export const BASE_PILOTS_URL = BASE_URL + "pilots/";
-export const BASE_RACES_URL = BASE_URL + "races/";
+export const BASE_URL_1 = "https://ilserver.herokuapp.com/api/v1/";
+export const BASE_TEAMS_URL_1 = BASE_URL_1 + "teams/";
+export const BASE_PILOTS_URL_1 = BASE_URL_1 + "pilots/";
+export const BASE_RACES_URL_1 = BASE_URL_1 + "races/";
+export const BASE_URL_2 = "https://ilserver2.herokuapp.com/api/v1/";
+export const BASE_TEAMS_URL_2 = BASE_URL_2 + "teams/";
+export const BASE_PILOTS_URL_2 = BASE_URL_2 + "pilots/";
+export const BASE_RACES_URL_2 = BASE_URL_2 + "races/";
 export const LEAGUES = {
   FIRST: 1,
   SECOND: 2,
+  THIRD: 3,
 };
 export const POSITIONS = {
   FIRST: 1,
@@ -96,6 +103,18 @@ export const IMG_FLAGS_URL = {
   CHINA: "/media/images/flags/chi.svg",
   AZERBAIJAN: "/media/images/flags/aze.svg",
   CANADA: "/media/images/flags/can.svg",
+  SINGAPORE: "/media/images/flags/sin.svg",
+  PORTUGAL: "/media/images/flags/por.svg",
+  FRANCE: "/media/images/flags/fra.svg",
+  BRAZIL: "/media/images/flags/bra.svg",
+  GREATE_BRITAIN: "/media/images/flags/gb.svg",
+  EMILIA_ROMAGNA: "/media/images/flags/ita.svg",
+  RUSSIA: "/media/images/flags/rus.svg",
+  USA: "/media/images/flags/usa.svg",
+  JAPAN: "/media/images/flags/jap.svg",
+  MEXICO: "/media/images/flags/mex.svg",
+  SAUDI_ARABIA: "/media/images/flags/sa.svg",
+  ITALY: "/media/images/flags/ita.svg",
 };
 export const IMG_FLAGS_WRAPPER = {
   [IMG_FLAGS_URL.SPAIN]: require("@/assets/img/flags/spa.svg"),
@@ -108,6 +127,18 @@ export const IMG_FLAGS_WRAPPER = {
   [IMG_FLAGS_URL.CHINA]: require("@/assets/img/flags/chi.svg"),
   [IMG_FLAGS_URL.AZERBAIJAN]: require("@/assets/img/flags/aze.svg"),
   [IMG_FLAGS_URL.CANADA]: require("@/assets/img/flags/can.svg"),
+  [IMG_FLAGS_URL.SINGAPORE]: require("@/assets/img/flags/sin.svg"),
+  [IMG_FLAGS_URL.PORTUGAL]: require("@/assets/img/flags/por.svg"),
+  [IMG_FLAGS_URL.FRANCE]: require("@/assets/img/flags/fra.svg"),
+  [IMG_FLAGS_URL.BRAZIL]: require("@/assets/img/flags/bra.svg"),
+  [IMG_FLAGS_URL.GREATE_BRITAIN]: require("@/assets/img/flags/gb.svg"),
+  [IMG_FLAGS_URL.EMILIA_ROMAGNA]: require("@/assets/img/flags/ita.svg"),
+  [IMG_FLAGS_URL.RUSSIA]: require("@/assets/img/flags/rus.svg"),
+  [IMG_FLAGS_URL.USA]: require("@/assets/img/flags/usa.svg"),
+  [IMG_FLAGS_URL.JAPAN]: require("@/assets/img/flags/jap.svg"),
+  [IMG_FLAGS_URL.MEXICO]: require("@/assets/img/flags/mex.svg"),
+  [IMG_FLAGS_URL.SAUDI_ARABIA]: require("@/assets/img/flags/sa.svg"),
+  [IMG_FLAGS_URL.ITALY]: require("@/assets/img/flags/ita.svg"),
 };
 export const IMG_PILOTS_URL = {
   AKHMETOV: "/media/images/pilots/akhmetov.png",

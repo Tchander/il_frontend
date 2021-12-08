@@ -60,19 +60,22 @@
                     КПП –Автоматическая;
                   </li>
                   <li class="il-regulations-content__subsection-text">
-                    Помощь на пит-лэйн–Выкл (Вкл для Лиги 2);
+                    Помощь на пит-лэйн–Выкл (Вкл для Лиги 2 и Лиги 3);
                   </li>
                   <li class="il-regulations-content__subsection-text">
-                    СРЭ –Автоматическая.
+                    Помощь СРЭ – Выкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Помощь DRS – Выкл.
                   </li>
                 </ul>
                 <h4 class="il-regulations-content__subsection-title">
-                  Настройки лобби:<br />Начало Гран-При Лиги 1: Воскресенье,
+                  Настройки лобби IL1:<br />Начало Гран-При Лиги 1: Воскресенье,
                   20:00 (МСК)
                 </h4>
                 <ul>
                   <li class="il-regulations-content__subsection-text">
-                    Формат –полная квалификация + гонка 50%;
+                    Формат – Короткая квалификация (18 минут) + гонка 50%;
                   </li>
                   <li class="il-regulations-content__subsection-text">
                     Характеристики болида – Равные;
@@ -84,7 +87,7 @@
                     Столкновения –Вкл;
                   </li>
                   <li class="il-regulations-content__subsection-text">
-                    Повреждения автомобиля – Полные;
+                    Повреждения автомобиля – Стандартные;
                   </li>
                   <li class="il-regulations-content__subsection-text">
                     Машина Безопасности –Вкл;
@@ -106,8 +109,8 @@
                   </li>
                 </ul>
                 <h4 class="il-regulations-content__subsection-title">
-                  Настройки лобби:<br />Начало Гран-При Лиги 2: Суббота, 20:00
-                  (МСК)
+                  Настройки лобби IL2:<br />Начало Гран-При Лиги 2: Суббота,
+                  20:00 (МСК)
                 </h4>
                 <ul>
                   <li class="il-regulations-content__subsection-text">
@@ -123,7 +126,46 @@
                     Столкновения – Вкл;
                   </li>
                   <li class="il-regulations-content__subsection-text">
-                    Повреждения автомобиля – Полные;
+                    Повреждения автомобиля – Стандартные;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Машина Безопасности –Вкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Правила и флаги – Вкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Строгость к срезанию углов – Строгие;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Прогревочный круг – Вкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Старт гонки – Ручной;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Призрак – Вкл.
+                  </li>
+                </ul>
+                <h4 class="il-regulations-content__subsection-title">
+                  Настройки лобби IL3:<br />Начало Гран-При Лиги 3: Суббота,
+                  18:00 (МСК)
+                </h4>
+                <ul>
+                  <li class="il-regulations-content__subsection-text">
+                    Формат – короткая квалификация (18 минут) + гонка 50%;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Характеристики болида – Равные;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Правило «ParcFerme» («Закрытый парк») – Вкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Столкновения – Вкл;
+                  </li>
+                  <li class="il-regulations-content__subsection-text">
+                    Повреждения автомобиля – Стандартные;
                   </li>
                   <li class="il-regulations-content__subsection-text">
                     Машина Безопасности –Вкл;
@@ -237,6 +279,9 @@
                 *Количество пилотов может варьироваться. Если кто-то из 1 Лиги
                 покидает Чемпионат, то в тестовые заезды добавляется еще 1 пилот
                 со 2 Лиги, занявший 6 место и т.д.
+              </p>
+              <p class="il-bold il-underline">
+                ПЕРЕХОДЫ ПО ТАКОМУ ЖЕ ПРИНЦИПУ ДЕСТВУЮТ МЕЖДУ ЛИГОЙ 2 и ЛИГОЙ 3.
               </p>
               <p class="il-underline">
                 Администрация вправе оставить пилотов в текущих лигах, либо
@@ -417,7 +462,9 @@
             </li>
             <li>
               Всем участникам необходимозаписывать квалификацию и гонку, для
-              решения различных споров и итогов гонки
+              решения различных споров и итогов гонки. Участники Лиги 1
+              записывают свой заезд в
+              <span class="il-underline il-bold">ОБЯЗАТЕЛЬНОМ</span> порядке.
             </li>
             <li>
               Высказывать оскорбительную критику работы организаторов заездов,
@@ -782,14 +829,14 @@
                 </tr>
               </table>
               <p>
-                Резервные пилоты, которые заменяют кого-либо в Лиге 2, в свой
+                Резервные пилоты, которые заменяют кого-либо в Лиге 3, в свой
                 Личный зачет получают полноценные очки – 50, 40, 35 и так далее,
                 а для команды, в которой пилот заменяет основного, в Кубок
                 Конструкторов зачисляются 50% очков – 25, 20, 17,5 и так далее.
               </p>
               <p>
-                В Лиге 1 резервный пилот зачисляет как в Личный зачет, так и в
-                Кубок конструкторов 100% очков.
+                В Лиге 1 и Лиге 2 резервный пилот зачисляет как в Личный зачет,
+                так и в Кубок конструкторов 100% очков.
               </p>
             </li>
             <li>
