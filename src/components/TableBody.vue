@@ -9,7 +9,9 @@
         {{ index + 1 }}
       </td>
       <td class="il-table-col">{{ pilot.name }}</td>
-      <td class="il-table-col">{{ pilot.team }}</td>
+      <td class="il-table-col" :style="$options.teamColor(pilot.team)">
+        {{ pilot.team }}
+      </td>
       <td class="il-table-col">
         <div v-if="pilot.total_score % 1 !== 0">
           {{ pilot.total_score }}
@@ -45,11 +47,13 @@
 import { mapState } from "vuex";
 import { POSITIONS } from "@/const";
 import { getClassByPosition } from "@/helpers";
+import { teamColor } from "@/helpers";
 
 export default {
   name: "TableBody",
   POSITIONS,
   getClassByPosition,
+  teamColor,
   props: {
     raceLength: {
       type: Number,

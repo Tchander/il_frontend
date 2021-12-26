@@ -6,7 +6,15 @@
       <div v-if="loading">
         <v-progress-circular indeterminate></v-progress-circular>
       </div>
-      <div v-if="currentRace && loading === false" class="il-race-info">
+      <div
+        v-if="currentRace && loading === false"
+        class="il-race-info"
+        :class="
+          isArchive
+            ? 'il-race-info--league_' + leagueForArchive
+            : 'il-race-info--league_' + leagueForTable
+        "
+      >
         <div class="il-race-info__name">
           {{ currentRace.name }}
         </div>
@@ -15,7 +23,15 @@
           :src="$options.getFlagImage(currentRace.country_flag)"
         ></v-img>
       </div>
-      <v-simple-table class="il-table" v-if="currentRace && loading === false">
+      <v-simple-table
+        class="il-table"
+        v-if="currentRace && loading === false"
+        :class="
+          isArchive
+            ? 'il-table--league_' + leagueForArchive
+            : 'il-table--league_' + leagueForTable
+        "
+      >
         <template v-slot:default>
           <thead>
             <tr class="il-table-head">
@@ -34,53 +50,24 @@
                 currentRace.results
               )"
               :key="index"
+              :style="$options.teamColor(result.team)"
             >
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 {{ result.race_position }}
               </td>
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 {{ result.pilot }}
               </td>
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 {{ result.team }}
               </td>
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 {{ result.qualifying_position }}
               </td>
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 {{ result.best_lap }}
               </td>
-              <td
-                class="il-table-col"
-                :class="
-                  $options.getClassByPosition(Number(result.race_position) - 1)
-                "
-              >
+              <td class="il-table-col">
                 <div v-if="result.score % 1 !== 0">
                   {{ result.score }}
                 </div>
@@ -103,13 +90,13 @@ import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
 import { mapActions, mapGetters, mapState } from "vuex";
 import { POSITIONS } from "@/const";
-import { getClassByPosition, getFlagImage } from "@/helpers";
+import { getFlagImage, teamColor } from "@/helpers";
 
 export default {
   name: "RaceInfo",
   POSITIONS,
-  getClassByPosition,
   getFlagImage,
+  teamColor,
   components: { FooterInfo, Navigation, HeaderBanner },
   props: {
     country: {
@@ -118,7 +105,6 @@ export default {
     },
     isArchive: {
       type: Boolean,
-      required: true,
       default: () => false,
     },
     leagueForArchive: {
@@ -177,6 +163,18 @@ export default {
   margin-bottom: 20px;
   padding: 6px;
 }
+.il-race-info--league_1 {
+  background: #02407b;
+  border: 3px solid #fff;
+}
+.il-race-info--league_2 {
+  background: #68100f;
+  border: 3px solid #fff;
+}
+.il-race-info--league_3 {
+  background: #02701a;
+  border: 3px solid #fff;
+}
 .il-race-info__name {
   width: 96%;
   font-weight: 700;
@@ -185,5 +183,14 @@ export default {
 .il-race-info__flag.il-race-info__flag.il-race-info__flag.il-race-info__flag {
   width: 50px;
   height: 32px;
+}
+.il-table--league_1.il-table--league_1.il-table--league_1 {
+  border: 3px solid #02407b;
+}
+.il-table--league_2.il-table--league_2.il-table--league_2 {
+  border: 3px solid #68100f;
+}
+.il-table--league_3.il-table--league_3.il-table--league_3 {
+  border: 3px solid #02701a;
 }
 </style>
