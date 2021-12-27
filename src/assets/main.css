@@ -22,11 +22,13 @@
   height: 32px;
 }
 .il-table-col.il-table-col.il-table-col {
-  color: #fff;
   font-size: 15px;
 }
+.il-table-row.il-table-row.il-table-row.il-table-row {
+  color: #fff;
+}
 .il-table-row:hover.il-table-row:hover.il-table-row:hover.il-table-row:hover {
-  background-color: #0f3368;
+  background-color: transparent;
 }
 .gold.gold.gold.gold {
   color: #ffd200;

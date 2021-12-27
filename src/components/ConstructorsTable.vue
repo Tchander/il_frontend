@@ -5,9 +5,15 @@
     </div>
     <div class="il-constructors-tables" v-if="loading === false">
       <div class="il-constructors-table" v-if="isArchive">
-        <h1 class="il-constructors-league-title">Лига 1</h1>
+        <h1
+          class="
+            il-constructors-league-title il-constructors-league-title--league_1
+          "
+        >
+          Лига 1
+        </h1>
         <v-simple-table
-          class="il-table il-constructor-table"
+          class="il-table il-constructor-table il-constructor-table--league_1"
           v-if="teams1FilteredByLeague1.length"
         >
           <template v-slot:default>
@@ -20,9 +26,16 @@
         </v-simple-table>
       </div>
       <div class="il-constructors-table" v-else>
-        <h1 class="il-constructors-league-title">Лига 1</h1>
+        <h1
+          class="
+            il-constructors-league-title il-constructors-league-title--league_1
+          "
+          @click="toSelectedLeague($options.LEAGUES.FIRST)"
+        >
+          Лига 1
+        </h1>
         <v-simple-table
-          class="il-table il-constructor-table"
+          class="il-table il-constructor-table il-constructor-table--league_1"
           v-if="teams2FilteredByLeague1.length"
         >
           <template v-slot:default>
@@ -35,9 +48,15 @@
         </v-simple-table>
       </div>
       <div class="il-constructors-table" v-if="isArchive">
-        <h1 class="il-constructors-league-title">Лига 2</h1>
+        <h1
+          class="
+            il-constructors-league-title il-constructors-league-title--league_2
+          "
+        >
+          Лига 2
+        </h1>
         <v-simple-table
-          class="il-table il-constructor-table"
+          class="il-table il-constructor-table il-constructor-table--league_2"
           v-if="teams1FilteredByLeague2.length"
         >
           <template v-slot:default>
@@ -50,9 +69,16 @@
         </v-simple-table>
       </div>
       <div class="il-constructors-table" v-else>
-        <h1 class="il-constructors-league-title">Лига 2</h1>
+        <h1
+          class="
+            il-constructors-league-title il-constructors-league-title--league_2
+          "
+          @click="toSelectedLeague($options.LEAGUES.SECOND)"
+        >
+          Лига 2
+        </h1>
         <v-simple-table
-          class="il-table il-constructor-table"
+          class="il-table il-constructor-table il-constructor-table--league_2"
           v-if="teams2FilteredByLeague2.length"
         >
           <template v-slot:default>
@@ -65,9 +91,16 @@
         </v-simple-table>
       </div>
       <div class="il-constructors-table" v-if="!isArchive">
-        <h1 class="il-constructors-league-title">Лига 3</h1>
+        <h1
+          class="
+            il-constructors-league-title il-constructors-league-title--league_3
+          "
+          @click="toSelectedLeague($options.LEAGUES.THIRD)"
+        >
+          Лига 3
+        </h1>
         <v-simple-table
-          class="il-table il-constructor-table"
+          class="il-table il-constructor-table il-constructor-table--league_3"
           v-if="teams2FilteredByLeague2.length"
         >
           <template v-slot:default>
@@ -117,6 +150,13 @@ export default {
   },
   methods: {
     ...mapActions("teams", ["getAllTeams1", "getAllTeams2"]),
+    toSelectedLeague(league) {
+      this.$router.push({
+        name: "TournamentTable",
+        path: "/table",
+        query: { league: league },
+      });
+    },
   },
   async created() {
     if (this.isArchive) {
@@ -138,6 +178,15 @@ export default {
 .il-constructor-table.il-constructor-table.il-constructor-table {
   width: 580px;
 }
+.il-constructor-table--league_1.il-constructor-table--league_1.il-constructor-table--league_1 {
+  border: 3px solid #02407b;
+}
+.il-constructor-table--league_2.il-constructor-table--league_2.il-constructor-table--league_2 {
+  border: 3px solid #68100f;
+}
+.il-constructor-table--league_3.il-constructor-table--league_3.il-constructor-table--league_3 {
+  border: 3px solid #02701a;
+}
 .il-constructors-league-title {
   margin-bottom: 20px;
   padding: 10px 0;
@@ -145,6 +194,19 @@ export default {
   color: #fff;
   font-size: 32px;
   border-radius: 4px;
+  cursor: pointer;
+}
+.il-constructors-league-title--league_1 {
+  background: #02407b;
+  border: 3px solid #fff;
+}
+.il-constructors-league-title--league_2 {
+  background: #68100f;
+  border: 3px solid #fff;
+}
+.il-constructors-league-title--league_3 {
+  background: #02701a;
+  border: 3px solid #fff;
 }
 @media (max-width: 1263px) {
   .il-constructors-tables {

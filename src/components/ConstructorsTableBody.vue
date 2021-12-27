@@ -2,21 +2,18 @@
   <tbody class="il-table-body" v-if="teams.length">
     <tr
       class="il-table-row il-table-team-row"
+      :style="$options.teamColor(team.name)"
       v-for="(team, index) in teams"
       :key="index"
       @click="toSelectedTeam(team.url_name)"
     >
-      <td class="il-table-col" :class="$options.getClassByPosition(index)">
+      <td class="il-table-col">
         {{ index + 1 }}
       </td>
-      <td class="il-table-col" :class="$options.getClassByPosition(index)">
+      <td class="il-table-col">
         {{ team.name }}
       </td>
-      <td
-        class="il-table-col"
-        :class="$options.getClassByPosition(index)"
-        v-if="league === $options.LEAGUES.FIRST"
-      >
+      <td class="il-table-col" v-if="league === $options.LEAGUES.FIRST">
         <div v-if="team.total_score_league1 % 1 !== 0">
           {{ team.total_score_league1 }}
         </div>
@@ -24,11 +21,7 @@
           {{ parseInt(team.total_score_league1) }}
         </div>
       </td>
-      <td
-        class="il-table-col"
-        :class="$options.getClassByPosition(index)"
-        v-else-if="league === $options.LEAGUES.SECOND"
-      >
+      <td class="il-table-col" v-else-if="league === $options.LEAGUES.SECOND">
         <div v-if="team.total_score_league2 % 1 !== 0">
           {{ team.total_score_league2 }}
         </div>
@@ -36,11 +29,7 @@
           {{ parseInt(team.total_score_league2) }}
         </div>
       </td>
-      <td
-        class="il-table-col"
-        :class="$options.getClassByPosition(index)"
-        v-else-if="league === $options.LEAGUES.THIRD"
-      >
+      <td class="il-table-col" v-else-if="league === $options.LEAGUES.THIRD">
         <div v-if="team.total_score_league3 % 1 !== 0">
           {{ team.total_score_league3 }}
         </div>
@@ -55,13 +44,13 @@
 <script>
 import { LEAGUES } from "@/const";
 import { POSITIONS } from "@/const";
-import { getClassByPosition } from "@/helpers";
+import { teamColor } from "@/helpers";
 
 export default {
   name: "ConstructorsTableBody",
   LEAGUES,
   POSITIONS,
-  getClassByPosition,
+  teamColor,
   props: {
     teams: {
       type: Array,
