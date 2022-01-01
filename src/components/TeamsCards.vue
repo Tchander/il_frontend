@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loading">
-      <v-progress-circular indeterminate></v-progress-circular>
+      <il-loading />
     </div>
     <div v-if="loading === false">
       <v-card class="il-team-card" v-for="(team, index) in teams" :key="index">
@@ -60,9 +60,11 @@
 <script>
 // import { API_MEDIA_URL } from "@/const";
 import { mapActions, mapGetters } from "vuex";
+import IlLoading from "@/components/IlLoading";
 import { getTeamImage } from "@/helpers";
 export default {
   name: "TeamsCards",
+  components: { IlLoading },
   getTeamImage,
   // API_MEDIA_URL,
   data() {

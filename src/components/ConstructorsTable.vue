@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loading">
-      <v-progress-circular indeterminate></v-progress-circular>
+      <il-loading />
     </div>
     <div class="il-constructors-tables" v-if="loading === false">
       <div class="il-constructors-table" v-if="isArchive">
@@ -120,6 +120,7 @@
 import { mapActions, mapGetters } from "vuex";
 import ConstructorsTableHead from "@/components/ConstructorsTableHead";
 import ConstructorsTableBody from "@/components/ConstructorsTableBody";
+import IlLoading from "@/components/IlLoading";
 import { LEAGUES } from "@/const";
 export default {
   name: "ConstructorsTable",
@@ -136,6 +137,7 @@ export default {
     };
   },
   components: {
+    IlLoading,
     ConstructorsTableBody,
     ConstructorsTableHead,
   },
