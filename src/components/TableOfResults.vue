@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="loading">
-      <v-progress-circular indeterminate></v-progress-circular>
+      <il-loading />
     </div>
     <div v-if="!isArchive">
       <switch-table-buttons v-if="loading === false" />
@@ -37,9 +37,10 @@ import { mapActions, mapGetters } from "vuex";
 import TableHead from "@/components/TableHead";
 import TableBody from "@/components/TableBody";
 import SwitchTableButtons from "@/components/SwitchTableButtons";
+import IlLoading from "@/components/IlLoading";
 export default {
   name: "TableOfResults",
-  components: { SwitchTableButtons, TableBody, TableHead },
+  components: { IlLoading, SwitchTableButtons, TableBody, TableHead },
   props: {
     isArchive: {
       type: Boolean,

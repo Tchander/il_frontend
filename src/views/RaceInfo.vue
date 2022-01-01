@@ -4,7 +4,7 @@
     <div class="il-container">
       <navigation :color="'lightGrey'" />
       <div v-if="loading">
-        <v-progress-circular indeterminate></v-progress-circular>
+        <il-loading />
       </div>
       <div
         v-if="currentRace && loading === false"
@@ -88,6 +88,7 @@
 import FooterInfo from "@/components/FooterInfo";
 import Navigation from "@/components/Navigation";
 import HeaderBanner from "@/components/HeaderBanner";
+import IlLoading from "@/components/IlLoading";
 import { mapActions, mapGetters, mapState } from "vuex";
 import { POSITIONS } from "@/const";
 import { getFlagImage, teamColor } from "@/helpers";
@@ -97,7 +98,7 @@ export default {
   POSITIONS,
   getFlagImage,
   teamColor,
-  components: { FooterInfo, Navigation, HeaderBanner },
+  components: { IlLoading, FooterInfo, Navigation, HeaderBanner },
   props: {
     country: {
       type: String,
