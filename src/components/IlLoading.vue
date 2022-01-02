@@ -28,7 +28,7 @@ export default {
   border-radius: 50%;
   border: 2px solid transparent;
   border-top: 2px solid #02407b;
-  animation: animate 4s linear infinite;
+  animation: animate 2s linear infinite;
 }
 @keyframes animate {
   0% {
@@ -51,8 +51,8 @@ export default {
     0 0 20px #02407b, 0 0 50px #02407b;
 }
 .il-loading-ring:nth-child(2) {
-  animation: animate2 4s linear infinite;
-  animation-delay: -1s;
+  animation: animate2 2s linear infinite;
+  animation-delay: -0.5s;
   border-top: 2px solid transparent;
   border-left: 2px solid #68100f;
 }
@@ -78,8 +78,8 @@ export default {
   }
 }
 .il-loading-ring:nth-child(3) {
-  animation: animate2 4s linear infinite;
-  animation-delay: -3s;
+  animation: animate2 2s linear infinite;
+  animation-delay: -1.5s;
   position: absolute;
   top: -22px;
   border-top: 2px solid transparent;
@@ -97,5 +97,10 @@ export default {
   background: #02701a;
   box-shadow: 0 0 5px #02701a33, 0 0 10px #02701a22, 0 0 20px #02701a11,
     0 0 20px #02701a, 0 0 50px #02701a;
+}
+@media (max-width: 959px) {
+  .il-loading-container {
+    margin-top: 40px;
+  }
 }
 </style>
